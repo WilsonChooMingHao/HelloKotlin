@@ -3,19 +3,31 @@ import java.util.*
 fun main(args: Array<String>) {
     println("Good ${ if(args[0].toInt() < 12) "morning" else "night"}, Kotlin")
 
-    println(fitMoreFish(10.0, listOf(3,3,3)))
+    whatShouldIDoToday("happy")
+    /*println(fitMoreFish(10.0, listOf(3,3,3)))
     println(fitMoreFish(8.0, listOf(2,2,2), hasDecorations = false))
     println(fitMoreFish(9.0, listOf(1,1,3), 3))
-    println(fitMoreFish(10.0, listOf(), 7, true))
+    println(fitMoreFish(10.0, listOf(), 7, true))*/
 
-    var fortune : String
+    /*var fortune : String
     for (i in 1..10) {
         fortune = getFortuneCookie(getBirthday())
         println("Your fortune is $fortune")
         if (fortune.contains("Take it easy")) break
-    }
+    }*/
 
     //feedTheFish()
+}
+
+fun whatShouldIDoToday(mood : String,
+                       weather : String = "sunny",
+                       temperature : Int = 24) : String
+{
+
+    return when {
+        mood == "happy" && weather == "sunny" -> "Go for a walk"
+        else -> "Stay home and read."
+    }
 }
 
 fun getFortuneCookie(birthday : Int) : String {
